@@ -76,7 +76,7 @@ lint: _parallel-cite
     # Анализаторы независимы после установки зависимостей — гоняем их параллельно.
     parallel --halt now,fail=1 <<'EOF'
     cd app/backend && vendor/bin/php-cs-fixer fix --dry-run --diff
-    cd app/backend && vendor/bin/phpstan analyse
+    cd app/backend && vendor/bin/phpstan analyse --memory-limit=1G
     cd app/backend && php -d error_reporting='E_ALL & ~E_DEPRECATED' vendor/bin/phpmd src text phpmd.xml
     cd app/backend && vendor/bin/rector process --dry-run
     cd app/frontend && npm run typecheck

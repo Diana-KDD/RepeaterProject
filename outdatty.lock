@@ -16,7 +16,7 @@ groups:
       www/content/task.typ: ebf6e0b273d849e2cf1a276ed5502ed8b9c2f8bb05f814d8e83e653087f2521d
   commands:
     source:
-      Justfile: df575f0cf27445d39a1e1c41cfefcb131ce34f71f26ae1b1529651185454a6ee
+      Justfile: ef1c6f7a372a855277bee5f724a31bdefd1368f1baf24f2f08f3e6a5984e599a
     dependents:
       www/content/index.typ: 8cd9d3668f05e8e02ec0008b8b280df43d07e058c1c5a91abdf9b78a19033210
       www/content/task.typ: ebf6e0b273d849e2cf1a276ed5502ed8b9c2f8bb05f814d8e83e653087f2521d
@@ -41,7 +41,7 @@ groups:
       www/content/task.typ: ebf6e0b273d849e2cf1a276ed5502ed8b9c2f8bb05f814d8e83e653087f2521d
   repo-layout:
     source:
-      Justfile: df575f0cf27445d39a1e1c41cfefcb131ce34f71f26ae1b1529651185454a6ee
+      Justfile: ef1c6f7a372a855277bee5f724a31bdefd1368f1baf24f2f08f3e6a5984e599a
       compose.yaml: 620a520be1cafed7b84e3a3de3cc79189cdba0e972d8e5f53db51a097a34b285
       devbox.json: 66bbcef55a4654318df272586c8b12ed0d79e3b70242dd25af77e22cff3e1c13
     dependents:
