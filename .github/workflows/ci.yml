@@ -11,10 +11,12 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install devbox
         uses: jetify-com/devbox-install-action@v0.13.0
+        with:
+          enable-cache: 'true'
 
       - name: Cache Playwright browsers
         uses: actions/cache@v4
@@ -25,7 +27,7 @@ jobs:
       - name: Install Playwright browser + system deps
         run: |
           cd e2e
-          npm install
+          npm ci
           npx playwright install --with-deps chromium
 
       - name: just verify

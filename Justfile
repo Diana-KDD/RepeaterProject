@@ -167,7 +167,8 @@ preflight-baseline:
 _handoff-clean:
     #!/usr/bin/env bash
     set -euo pipefail
-    test -z "$(git status --porcelain)" || { echo "рабочее дерево грязное" >&2; exit 1; }
+    dirty="$(git status --porcelain)"
+    test -z "$dirty" || { echo "рабочее дерево грязное:" >&2; echo "$dirty" >&2; exit 1; }
     if git ls-files --error-unmatch .env >/dev/null 2>&1; then echo ".env в индексе" >&2; exit 1; fi
     test -f .env.example || { echo "нет .env.example" >&2; exit 1; }
     ! grep -qE '^-[[:space:]]+\S' LOGBOOK.md || { echo "LOGBOOK.md заполнен — должен быть пустой шаблон" >&2; exit 1; }
