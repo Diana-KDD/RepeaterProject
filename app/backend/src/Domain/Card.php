@@ -50,7 +50,7 @@ class Card
         switch ($grade) {
             case Grade::Again:
                 $this->ease = $this->ease->loweredBy(0.20);
-                $this->interval = Interval::none();
+                $this->interval = Interval::ofDays(1);
                 break;
             case Grade::Hard:
                 $this->ease = $this->ease->loweredBy(0.15);

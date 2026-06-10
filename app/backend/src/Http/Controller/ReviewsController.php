@@ -66,10 +66,7 @@ final readonly class ReviewsController
         }
 
         $review = $card->grade($grade, $this->now);
-
-        // TODO: повторение пока не доделано. Оценка сохраняется, но карточка не
-        // сохраняется с новым интервалом и датой, поэтому не уходит из очереди
-        // на сегодня. Допишите сохранение карточки ($this->cards->save($card)).
+        $this->cards->save($card);
         $this->reviews->save($review);
 
         return Json::write($response, $this->serializer->serialize($review), 201);
