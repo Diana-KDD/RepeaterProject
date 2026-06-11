@@ -46,7 +46,7 @@ $serializer = new Serializer();
 $notes = new NotesController($noteRepo, $serializer, $now);
 $cards = new CardsController($cardRepo, $noteRepo, $serializer, $now);
 $reviews = new ReviewsController($cardRepo, $reviewRepo, $serializer, $now);
-$stats = new StatsController($cardRepo, $serializer);
+$stats = new StatsController($cardRepo, $reviewRepo, $serializer);
 
 $app = AppFactory::create();
 $app->addBodyParsingMiddleware();
